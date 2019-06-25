@@ -16,7 +16,8 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    @photo = Photo.new
+      @photo = current_user.photos.build
+      @user = @photo.user
   end
 
   # GET /photos/1/edit
@@ -73,8 +74,9 @@ class PhotosController < ApplicationController
   end
   
   def confirm
-      @photo = Photo.new(photo_params)
+      @photo = current_user.photos.build(photo_params)
       @photo.user_id = current_user.id
+      @user = @photo.user
   end
 
   private
