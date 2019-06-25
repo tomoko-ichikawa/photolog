@@ -1,0 +1,8 @@
+<h1>ユーザー詳細</h1>
+<hr>
+<p><span>email: </span><%= @user.email %></p>
+
+<% @photos.each do |photo| %>
+  <hr>
+  <p><span>投稿内容: </span><%=link_to photo.caption, photo_path(photo.id) %></p>
+<% end %>
