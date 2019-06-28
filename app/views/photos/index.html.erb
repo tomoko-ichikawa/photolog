@@ -7,8 +7,8 @@
         <!-- Blog Post -->
       <% @photos.each do |photo| %>
         <div class="card mb-4">
-            <p><%= image_tag photo.image.to_s %></p>
-            <p><%= photo.caption %></p>
+            <li><%= image_tag photo.image.to_s %></li>
+            <li><%= photo.caption %></li>
         </div>
       <% end %>
 
