@@ -1,6 +1,8 @@
 <h1>ユーザー詳細</h1>
 <hr>
+<p>name : <%= @user.name %></p>
 <p><span>email: </span><%= @user.email %></p>
+<p>profile : <%= @user.profile %></p>
 
 <% @photos.each do |photo| %>
   <hr>
