@@ -7,20 +7,15 @@
         <!-- Blog Post -->
       <% @photos.each do |photo| %>
         <div class="card mb-4">
-            <li><%= image_tag photo.image.to_s %></li>
-            <li><%= photo.caption %></li>
+            <br>
+            <center><%= image_tag photo.image.to_s %></center>
+            <br>
+            <ul>caption: <%= photo.caption %></ul>
+            <ul><%= link_to 'Edit', edit_photo_path(photo) %></ul>
+            <ul><%= link_to 'Show', photo %></ul>
+            <ul><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></ul>
         </div>
       <% end %>
-
-          <div class="card-footer text-muted">
-            <% @photos.each do |photo| %>
-                <%= link_to 'Edit', edit_photo_path(photo) %>
-                <%= link_to 'Show', photo %>
-                <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
