@@ -1,12 +1,11 @@
 class PhotosController < ApplicationController
     before_action :authenticate_user!, except: [:index]
-    before_action :set_blog, only: [:show, :edit, :update, :destory]
+    before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
   # GET /photos.json
   def index
     @photos = Photo.all
-    @users = User.all
   end
 
   # GET /photos/1
@@ -17,8 +16,12 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    @photo = current_user.photos.build
-    @user = @photo.user
+    if params[:back]
+        @photo = Photo.new(photo_params)
+    else
+        @photo = current_user.photos.build
+        @user = @photo.user
+    end
   end
 
   # GET /photos/1/edit

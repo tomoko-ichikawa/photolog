@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   # ログイン後、blogs/indexに移動する
   def after_sign_in_path_for(resource)
-      blogs_path
+      photos_path
   end
   
   # deviseコントローラーにストロングパラメータを追加する

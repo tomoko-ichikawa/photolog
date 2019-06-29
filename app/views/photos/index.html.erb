@@ -10,13 +10,14 @@
             <br>
             <center><%= image_tag photo.image.to_s %></center>
             <br>
-            <ul>name : <%= @users.name %></ul>
+            <ul>name : <%= photo.user.name %></ul>
             <ul>caption: <%= photo.caption %></ul>
             <ul><%= link_to 'Edit', edit_photo_path(photo) %></ul>
             <ul><%= link_to 'Show', photo %></ul>
             <ul><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></ul>
         </div>
       <% end %>
+  </div>
 
     <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
