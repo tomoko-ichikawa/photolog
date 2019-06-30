@@ -76,8 +76,8 @@ class PhotosController < ApplicationController
   
   def confirm
       @photo = current_user.photos.build(photo_params)
-      @photo.user_id = current_user.id
       @user = @photo.user
+      render :new if @photo.invalid?
   end
 
   private

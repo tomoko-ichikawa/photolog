@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <!-- Blog Entries Column -->
-  <div class="col-md-8">
+  <div class="col-md-12">
 　　　<h1 class="my-4">Photos</h1>
 
         <!-- Blog Post -->
       <% @photos.each do |photo| %>
-        <div class="card mb-4">
+        <div class="card mb-12">
             <br>
             <center><%= image_tag photo.image.to_s %></center>
             <br>
             <ul>name : <%= photo.user.name %></ul>
             <ul>caption: <%= photo.caption %></ul>
-            <ul><%= link_to 'Edit', edit_photo_path(photo) %></ul>
-            <ul><%= link_to 'Show', photo %></ul>
-            <ul><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></ul>
+            <ul><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_photo_path(photo) %></button></ul>
+            <ul><button type="button" class="btn btn-default"><%= link_to 'Show', photo %></button></ul>
+            <ul><button type="button" class="btn btn-default"><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></button></ul>
         </div>
       <% end %>
   </div>
