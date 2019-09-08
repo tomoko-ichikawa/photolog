@@ -18,11 +18,19 @@ gem 'mini_magick'
 gem 'devise'
 gem 'bootstrap', '~>4.1.1'
 gem 'jquery-rails'
+gem 'dotenv-rails'
+gem 'unicorn'
+gem 'mini_racer', platforms: :ruby
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -34,4 +42,3 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fog-aws'
-gem 'dotenv-rails'
