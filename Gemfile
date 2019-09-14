@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'unicorn'
 gem 'mini_racer', platforms: :ruby
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
